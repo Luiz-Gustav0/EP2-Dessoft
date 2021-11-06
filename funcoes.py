@@ -16,3 +16,12 @@ def cria_pecas():
                 pass
     lista = random.sample(lista_pecas,28)
     return lista
+
+def verifica_ganhador(dicionario):
+    ganhador = 0
+    for vencedor,pecas in dicionario.items():
+        if len(pecas) == 0:
+            return vencedor
+            ganhador += 1
+    if ganhador == 0:
+        return -1
