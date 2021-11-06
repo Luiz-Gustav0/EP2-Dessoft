@@ -25,3 +25,10 @@ def verifica_ganhador(dicionario):
             ganhador += 1
     if ganhador == 0:
         return -1
+
+def soma_pecas (lista_pecas):
+    soma = 0 
+    for numeros in lista_pecas:
+        soma += numeros[0]
+        soma += numeros[1]
+    return soma
