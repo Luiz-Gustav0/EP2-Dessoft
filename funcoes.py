@@ -48,3 +48,37 @@ def posicoes_possiveis(x,y):
                 lista_posicoes.append(y.index(pecas))
             
     return lista_posicoes
+
+#Iniciando o Jogo de Dominó
+
+def inicia_jogo(quant_jog, lista_pecas):
+    i = 0
+    participantes = {}
+    x = []
+    y = []
+    pecas = 0
+    numero_pecas = 28
+    peca_jogador = 0
+
+    while i < quant_jog:
+        pecas += 7
+        lista_pecas_jog = []
+        while peca_jogador < pecas:
+            lista_pecas_jog.append(lista_pecas[peca_jogador])
+            participantes[i] = lista_pecas_jog
+            peca_jogador += 1
+            numero_pecas -= 1
+        i+=1
+    
+    while numero_pecas > 0:
+        x.append(lista_pecas[peca_jogador])
+        peca_jogador +=1
+        numero_pecas -= 1
+
+    dicionario = {}
+
+    dicionario['jogadores'] = participantes
+    dicionario['monte'] = x
+    dicionario['mesa'] = y
+
+    return dicionario
