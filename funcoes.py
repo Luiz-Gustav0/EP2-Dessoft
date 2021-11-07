@@ -1,3 +1,5 @@
+#Criando peças de dominó
+
 import random 
 def cria_pecas():
     numeros = [0,1,2,3,4,5,6]
@@ -17,6 +19,8 @@ def cria_pecas():
     lista = random.sample(lista_pecas,28)
     return lista
 
+#Quem ganhou no dominó?
+
 def verifica_ganhador(dicionario):
     ganhador = 0
     for vencedor,pecas in dicionario.items():
@@ -25,6 +29,8 @@ def verifica_ganhador(dicionario):
             ganhador += 1
     if ganhador == 0:
         return -1
+
+#Soma peças de dominó
 
 def soma_pecas (lista_pecas):
     soma = 0 
