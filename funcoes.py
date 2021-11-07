@@ -32,3 +32,19 @@ def soma_pecas (lista_pecas):
         soma += numeros[0]
         soma += numeros[1]
     return soma
+
+#Posições possíveis da mão
+
+def posicoes_possiveis(x,y):
+    lista_posicoes = []
+    n = 0
+    if len(x) == 0:
+        for i in y:
+            lista_posicoes.append(n)
+            n +=1
+    else:
+        for pecas in y:
+            if x[0][0] in pecas or x[-1][1] in pecas:
+                lista_posicoes.append(y.index(pecas))
+            
+    return lista_posicoes
