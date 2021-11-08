@@ -88,3 +88,29 @@ def inicia_jogo(quant_jog, lista_pecas):
     dicionario['mesa'] = y
 
     return dicionario
+
+#Adicionando peças a mesa num jogo de dominó
+def adiciona_na_mesa(peca,situacao_mesa):
+    nova_situacao_mesa = []
+
+    if situacao_mesa == []:
+        nova_situacao_mesa.append(peca)
+    elif peca[1] == situacao_mesa[0][0] :
+        nova_situacao_mesa.append(peca)
+        nova_situacao_mesa.append(situacao_mesa[0])
+    elif peca[1] == situacao_mesa[-1][-1] :
+        peca.reverse()
+        for valor in range (0 , len(situacao_mesa)):
+            nova_situacao_mesa.append(situacao_mesa[valor])
+        nova_situacao_mesa.append(peca)
+    elif peca[0] == situacao_mesa[0][0] :
+        peca.reverse()
+        nova_situacao_mesa.append(peca)
+        for valor in range (0 , len(situacao_mesa)):
+            nova_situacao_mesa.append(situacao_mesa[valor])
+    elif peca[0] == situacao_mesa[-1][-1] :
+        for valor in range (0 , len(situacao_mesa)):
+            nova_situacao_mesa.append(situacao_mesa[valor])
+        nova_situacao_mesa.append(peca)
+
+    return nova_situacao_mesa
