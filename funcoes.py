@@ -17,6 +17,7 @@ def cria_pecas():
             else:
                 pass
     lista = random.sample(lista_pecas,28)
+    lista.reverse()
     return lista
 
 #Quem ganhou no dominó?
